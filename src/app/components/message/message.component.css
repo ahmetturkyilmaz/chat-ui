@@ -1,0 +1,37 @@
+.message-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
+}
+
+.message-list .inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  overflow: auto;
+}
+
+.message-list .message-item {
+  margin-bottom: 24px;
+}
+
+.message-list .message-item .content-header {
+  margin-bottom: 8px;
+  font-style: italic;
+}
+
+.message-list .message-item .content {
+  background-color: aquamarine;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.message-list .message-item .content-date {
+  color: #444;
+  font-size: 11px;
+  text-align: right;
+  margin-top: 4px;
+}

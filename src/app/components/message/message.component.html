@@ -1,0 +1,29 @@
+<div class="message-list">
+  <div class="inner" id="inner-message-content">
+    <div *ngFor="let message of messages" class="message-item">
+      <div class="content-header">{{ getUserName(message.fromUserId) }}</div>
+      <div class="content">
+        {{ message.content }}
+        <div class="content-date">{{ message.createdAt | date: "medium" }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="roomId > 0">
+    <form (ngSubmit)="onSubmit()">
+      <mat-form-field
+        style="width: 100%"
+        class="message-input"
+        appearance="fill"
+      >
+        <mat-label>Message</mat-label>
+        <input
+          matInput
+          placeholder="Message"
+          [(ngModel)]="message"
+          name="message"
+        />
+      </mat-form-field>
+    </form>
+  </div>
+</div>

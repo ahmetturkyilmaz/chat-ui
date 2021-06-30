@@ -1,0 +1,14 @@
+.login-wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.login-card {
+  width: 480px;
+  margin-top: 48px;
+}
+
+.login-input {
+  width: 100%;
+}

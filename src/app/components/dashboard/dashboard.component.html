@@ -1,0 +1,44 @@
+<div class="dashboard">
+  <div class="rooms">
+    <div class="room-list">
+      <div
+        *ngFor="let room of rooms"
+        class="room-item"
+        (click)="selectRoom(room)"
+      >
+        {{ room.name }}
+      </div>
+    </div>
+    <div class="create-room-content">
+      <button
+        (click)="openCreateRoomDialog()"
+        mat-raised-button
+        color="primary"
+        class="create-button"
+      >
+        Create Room
+      </button>
+    </div>
+  </div>
+
+  <div class="room-detail">
+    <div class="messages">
+      <app-message
+        *ngIf="!!selectedRoom"
+        (onMessageAdd)="onMessageAdd()"
+        [roomId]="selectedRoom.id"
+        [messages]="selectedRoomMessages"
+        [users]="users"
+      ></app-message>
+    </div>
+
+    <div class="detail">
+      <app-room-detail
+        *ngIf="!!selectedRoom"
+        (onUserAdd)="onUserAdd($event)"
+        [roomId]="selectedRoom.id"
+        [users]="users"
+      ></app-room-detail>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div>
+  <h1>Room Users</h1>
+  <div>
+    <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Assignee</mat-label>
+        <input
+          type="text"
+          matInput
+          [formControl]="formControl"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          [displayWith]="displayFn"
+          (optionSelected)="onUserSelected($event)"
+        >
+          <mat-option
+            *ngFor="let option of filteredOptions | async"
+            [value]="option"
+          >
+            {{ option.name }}
+            <span style="font-size: 10px">{{ option.email }}</span>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </div>
+</div>
